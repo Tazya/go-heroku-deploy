@@ -15,4 +15,4 @@ RUN apk update --no-cache && apk add --no-cache ca-certificates
 
 COPY --from=builder /build/app /usr/local/bin/
 
-CMD ["/usr/local/bin/app"]
+ENTRYPOINT ["/usr/local/bin/app"]
