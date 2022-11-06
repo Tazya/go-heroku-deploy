@@ -13,7 +13,7 @@ func main() {
 	})
 
 	httpSrv := http.Server{
-		Addr:    ":8888",
+		Addr:    ":80",
 		Handler: mux,
 	}
 
