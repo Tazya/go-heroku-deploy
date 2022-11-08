@@ -13,7 +13,7 @@ func main() {
 	mux := http.NewServeMux()
 
 	mux.HandleFunc("/", func(res http.ResponseWriter, req *http.Request) {
-		fmt.Fprintf(res, "Hello!")
+		fmt.Fprintf(res, "Hello Go!")
 	})
 
 	httpSrv := http.Server{
