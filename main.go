@@ -1,11 +1,15 @@
 package main
 
 import (
+	"flag"
 	"fmt"
 	"net/http"
 )
 
 func main() {
+	port := flag.String("port", "8888", "HTTP port")
+	flag.Parse()
+
 	mux := http.NewServeMux()
 
 	mux.HandleFunc("/", func(res http.ResponseWriter, req *http.Request) {
@@ -13,7 +17,7 @@ func main() {
 	})
 
 	httpSrv := http.Server{
-		Addr:    ":80",
+		Addr:    ":" + *port,
 		Handler: mux,
 	}
 
